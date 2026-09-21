@@ -1,0 +1,18 @@
+a.
+1: sync
+2: async body
+6: sync end
+3: after await
+4: timeout 0
+5: then
+
+At first the Js engine contain: Heap ,and Event call Stack
+As js is a Syncronus language,so it read line by line.
+So the call goes to event loop then it goes to web api.
+The Web api forward it to  Queue. All the request are come to this queue and one by one it goes back to the event loop.
+In the case of promises or some callback api its create a speacial queue to exucuite the lines of code later.
+Priority wise there also contain a proprity Queue which have the the Callback (macrotask) Queue and also the Microtask Queue are realse the and following this order the script is executed.
+
+b. The second .then receives the doctor name,beacuse its acces the name of doctor object through doctor.name.
+
+c. 

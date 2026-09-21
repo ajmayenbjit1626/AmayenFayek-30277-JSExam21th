@@ -1,0 +1,17 @@
+Output:
+function
+function
+reference error
+number
+
+
+If it throws the error will be reference error in the below lines:
+> `${slot.start} - ${slot.end}`;
+>{ patient, fee: consultFee };
+beacuse the variables are not defined.
+
+formatSlot : Its a function and it will beahave like it returns the time  between start and end time slot.
+buildInvoice : Its also a functionm and This function will return the patient object and consultation fee. 
+consultFee: Its a property of fee
+
+Thats why formatSlot , buildInvoice and consultFee each behave differently

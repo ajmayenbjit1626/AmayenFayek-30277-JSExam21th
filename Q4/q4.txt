@@ -1,0 +1,6 @@
+a.
+Its actually returns  a map containing appointment id and the appointment fee.
+
+beacuse we know the a map always keep data key and value wise.
+So as if it get the appointment id and through getAppointmentCards it will map the id wise appointment fee.
+

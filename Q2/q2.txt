@@ -1,0 +1,30 @@
+a.
+console.log(appointmentSnapshot.appointmentId) =  APT-9001
+console.log(appointmentSnapshot.patient.address.city) = Sylhet
+console.log(appointmentSnapshot.tests.length) = 2
+
+appointmentId behaved differently from
+patient.address.city beacuse through Object.assign beacuse it implemented deepcopy object.Which mechanism is to create two different reference copy object.
+
+On the other hand patient.address.city behave differently beacuse its a objects inner object property so that it will have not implemented the Deepcopy.
+
+{ ...appointmentSnapshot } behave differently because its a spread operator which reflects the shallow copy of an object. Where Object.assign behave as deepcopy.
+
+
+b.
+cloneAppointment(appointment) hat returns a fully independent copy, so that no mutation of
+the clone can ever reach appointmentSnapshot beacuse its use to create deepcopy object.In deep copy object it create different object in the heep. 
+The teammate implements:
+ 1.one isJSON.parse(JSON.stringify(appointment))
+ 2.structuredClone(appointment)
+ 3.Object.assign({}, appointment)
+
+c.
+function getTopThreeTests(tests) {
+return tests.sort((a, b) => b.price - a.price).slice(0, 3);
+}
+
+here the bug will create through slice function.
+
+d.durations.sort() will give the log : 8,9,10,11
+clinicConfig = { maxPerSlot: 6 }; // line Y this line will throughs and const will protect the values of it.
